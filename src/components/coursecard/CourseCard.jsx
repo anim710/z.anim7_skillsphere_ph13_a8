@@ -19,13 +19,10 @@ export default function CourseCard({ course }) {
           </span>
           <span className="badge badge-ghost badge-xs">{course.level}</span>
         </div>
-
         <h2 className="card-title text-sm font-bold leading-snug mt-1 line-clamp-2">
           {course.title}
         </h2>
-
         <p className="text-xs text-gray-500">by {course.instructor}</p>
-
         <div className="flex items-center gap-3 text-xs text-gray-500 mt-1">
           <span className="flex items-center gap-1">
             <FontAwesomeIcon icon={faClock} className="w-3 h-3" />
@@ -36,12 +33,10 @@ export default function CourseCard({ course }) {
             {course.students?.toLocaleString()}
           </span>
         </div>
-
         <div className="flex items-center gap-1 mt-1">
           <FontAwesomeIcon icon={faStar} className="w-3 h-3 text-yellow-400" />
           <span className="text-sm font-semibold text-gray-700">{course.rating}</span>
         </div>
-
         <div className="card-actions mt-3">
           <Link href={`/courses/${course.id}`} className="btn btn-primary btn-sm w-full">
             View Details

@@ -1,5 +1,5 @@
-// import { auth } from "@/lib/auth"; // path to your auth file
-import { auth } from "@/src/lib/auth";
+// import { auth } from "@/lib/auth";
+import { authClient } from "@/src/lib/auth-client";
 import { toNextJsHandler } from "better-auth/next-js";
 
-export const { POST, GET } = toNextJsHandler(auth);
+export const { GET, POST } = toNextJsHandler(authClient.handler);
