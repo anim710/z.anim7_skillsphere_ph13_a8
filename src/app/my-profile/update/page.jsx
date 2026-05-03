@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faUser, faImage } from "@fortawesome/free-solid-svg-icons";
+import { authClient } from "@/src/lib/auth-client";
 
 export default function UpdateProfilePage() {
   const [session, setSession] = useState(null);

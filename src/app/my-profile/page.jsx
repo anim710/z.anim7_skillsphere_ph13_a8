@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPenToSquare, faCalendar, faShield, faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import { authClient } from "@/src/lib/auth-client";
 
 export default function MyProfilePage() {
   const [session, setSession] = useState(null);
