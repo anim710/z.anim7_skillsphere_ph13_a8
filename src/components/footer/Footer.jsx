@@ -45,11 +45,11 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <FontAwesomeIcon icon={faPhone} className="w-3.5 h-3.5 text-purple-400" />
-              +1 (555) 123-4567
+              +880 1234 56789
             </li>
             <li className="flex items-center gap-2">
               <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-purple-400" />
-              123 Learning Ave, NY
+              Dhaka City, Bangladesh
             </li>
           </ul>
         </div>

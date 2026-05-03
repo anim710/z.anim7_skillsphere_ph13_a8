@@ -313,22 +313,50 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-purple-600 to-indigo-700 text-white py-16">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Learning?</h2>
-          <p className="text-purple-200 mb-8 text-lg">
-            Join thousands of learners already upgrading their skills on SkillSphere.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/register" className="btn bg-white text-purple-700 font-bold border-0 hover:bg-gray-100 px-8">
-              Get Started Free
-            </Link>
-            <Link href="/courses" className="btn btn-outline border-white text-white hover:bg-white hover:text-purple-700 px-8">
-              Browse Courses
-            </Link>
+      <section className="relative text-white py-24 overflow-hidden">
+
+          {/* Video Background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="/cta-bg.mp4" type="video/mp4" />
+          </video>
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-purple-900/70 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 max-w-3xl mx-auto px-4 text-center">
+            <span className="inline-block bg-white/20 text-white text-sm px-4 py-1 rounded-full mb-4">
+              🎓 Start Your Journey Today
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Ready to Start Learning?
+            </h2>
+            <p className="text-purple-200 mb-8 text-lg">
+              Join thousands of learners already upgrading their skills on SkillSphere.
+            </p>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link
+                href="/register"
+                className="btn bg-white text-purple-700 font-bold border-0 hover:bg-gray-100 px-8 btn-lg"
+              >
+                Get Started Free
+              </Link>
+              <Link
+                href="/courses"
+                className="btn btn-outline border-white text-white hover:bg-white hover:text-purple-700 px-8 btn-lg"
+              >
+                Browse Courses
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+
+        </section>
 
     </div>
   );
