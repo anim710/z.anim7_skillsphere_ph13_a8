@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import dynamic from "next/dynamic";
 import "swiper/css";
 import "swiper/css/pagination";
 // import CourseCard from "@/components/CourseCard";
@@ -14,6 +15,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { getCourses } from "@/src/lib/api";
 import CourseCard from "@/src/components/coursecard/CourseCard";
+
+// Import Lottie dynamically to avoid SSR issues
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import learningAnimation from "./learning.json";
+import skillslearnAnimation from "./skill-learning.json";
+import delelopingAnimation from "./Developing.json";
 
 const banners = [
   {
@@ -68,32 +75,138 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Slider */}
+
+      {/* ── Hero Slider with Lottie ── */}
       <Swiper
         modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop
         className="w-full"
       >
-        {banners.map((b, i) => (
-          <SwiperSlide key={i}>
-            <div className={`bg-gradient-to-r ${b.bg} text-white min-h-[420px] flex items-center`}>
-              <div className="max-w-4xl mx-auto px-6 py-20 text-center w-full">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                  {b.title}
-                </h1>
-                <p className="text-lg md:text-xl mb-8 opacity-90">{b.subtitle}</p>
-                <Link
-                  href={b.href}
-                  className="btn bg-white text-purple-700 font-bold px-10 border-0 hover:bg-gray-100 btn-lg"
-                >
-                  {b.cta}
-                </Link>
+        {/* Slide 1 — Lottie Animation slide */}
+        <SwiperSlide>
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-700 text-white min-h-[500px] flex items-center">
+            <div className="max-w-6xl mx-auto px-6 py-10 w-full">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                {/* Left text */}
+                <div className="flex-1 text-center md:text-left">
+                  <span className="inline-block bg-white/20 text-white text-sm px-4 py-1 rounded-full mb-4">
+                    🎓 #1 Online Learning Platform
+                  </span>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    Upgrade Your <br />
+                    <span className="text-yellow-300">Skills Today</span> 🚀
+                  </h1>
+                  <p className="text-lg md:text-xl mb-8 opacity-90">
+                    Learn from Industry Experts at your own pace
+                  </p>
+                  <div className="flex gap-4 flex-wrap justify-center md:justify-start">
+                    <Link
+                      href="/courses"
+                      className="btn bg-white text-purple-700 font-bold border-0 hover:bg-gray-100 px-8"
+                    >
+                      Browse Courses
+                    </Link>
+                    <Link
+                      href="/register"
+                      className="btn btn-outline border-white text-white hover:bg-white hover:text-purple-700 px-8"
+                    >
+                      Join Free
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Right Lottie animation */}
+                <div className="flex-1 flex justify-center">
+                  <Lottie
+                    animationData={learningAnimation}
+                    loop={true}
+                    className="w-full max-w-sm md:max-w-md"
+                  />
+                </div>
+
               </div>
             </div>
-          </SwiperSlide>
-        ))}
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 2 */}
+        <SwiperSlide>
+          <div className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white min-h-[500px] flex items-center">
+            <div className="max-w-6xl mx-auto px-6 py-10 w-full">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <div className="flex-1 text-center md:text-left">
+                  <span className="inline-block bg-white/20 text-white text-sm px-4 py-1 rounded-full mb-4">
+                    💡 Expert-led Courses
+                  </span>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    Master <br />
+                    <span className="text-yellow-300">In-Demand Skills</span>
+                  </h1>
+                  <p className="text-lg md:text-xl mb-8 opacity-90">
+                    Join 50,000+ learners worldwide
+                  </p>
+                  <Link
+                    href="/register"
+                    className="btn bg-white text-teal-700 font-bold border-0 hover:bg-gray-100 px-8"
+                  >
+                    Join for Free
+                  </Link>
+                </div>
+
+                <div className="flex-1 flex justify-center">
+                  <Lottie
+                    animationData={skillslearnAnimation}
+                    loop={true}
+                    className="w-full max-w-sm md:max-w-md"
+                  />
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* Slide 3 */}
+        <SwiperSlide>
+          <div className="bg-gradient-to-r from-orange-500 to-rose-600 text-white min-h-[500px] flex items-center">
+            <div className="max-w-6xl mx-auto px-6 py-10 w-full">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <div className="flex-1 text-center md:text-left">
+                  <span className="inline-block bg-white/20 text-white text-sm px-4 py-1 rounded-full mb-4">
+                    🏆 Learn & Grow
+                  </span>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    Learn. Build. <br />
+                    <span className="text-yellow-300">Succeed.</span>
+                  </h1>
+                  <p className="text-lg md:text-xl mb-8 opacity-90">
+                    Expert-curated courses for every level
+                  </p>
+                  <Link
+                    href="/courses"
+                    className="btn bg-white text-orange-700 font-bold border-0 hover:bg-gray-100 px-8"
+                  >
+                    Explore Now
+                  </Link>
+                </div>
+
+                <div className="flex-1 flex justify-center">
+                  <Lottie
+                    animationData={delelopingAnimation}
+                    loop={true}
+                    className="w-full max-w-sm md:max-w-md"
+                  />
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
 
       {/* Stats Bar */}
@@ -216,6 +329,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
