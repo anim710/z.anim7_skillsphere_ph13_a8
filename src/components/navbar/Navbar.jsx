@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { authClient } from "@/src/lib/auth-client";
 
+
+
 export default function Navbar() {
   const [session, setSession] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,25 +26,29 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="shadow-sm sticky top-0 z-50 bg-white">
+    <nav style={{ backgroundColor: "#1B2B49", color: "#fff" }} className="sticky top-0 z-50 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold text-purple-700">
-          <FontAwesomeIcon icon={faBookOpen} className="w-6 h-6" />
-          SkillSphere
-        </Link>
+           <Link href="/" className="flex items-center gap-2">
+            <img
+              src="/skillspheree.png"
+              alt="SkillSphere Logo"
+              className="h-10 w-auto object-contain"
+            />
+            <span style={{ fontWeight: "bold" , fontSize: "1.25rem" }}>SkillSphere</span> 
+          </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="font-medium text-gray-600 hover:text-purple-600 transition-colors">
+          <Link href="/" className="font-medium hover:text-blue-900 transition-colors">
             Home
           </Link>
-          <Link href="/courses" className="font-medium text-gray-600 hover:text-purple-600 transition-colors">
+          <Link href="/courses" className="font-medium hover:text-blue-900 transition-colors">
             Courses
           </Link>
           {session?.user && (
-            <Link href="/my-profile" className="font-medium text-gray-600 hover:text-purple-600 transition-colors">
+            <Link href="/my-profile" className="font-medium hover:text-blue-900 transition-colors">
               My Profile
             </Link>
           )}
@@ -71,9 +77,9 @@ export default function Navbar() {
               </button>
             </div>
           ) : (
-            <div className="flex gap-2">
-              <Link href="/login" className="btn btn-sm btn-outline btn-primary">Login</Link>
-              <Link href="/register" className="btn btn-sm btn-primary">Register</Link>
+            <div className="flex gap-2 text-white">
+              <Link href="/login" className="btn btn-sm btn-outline btn-primary text-white">Login</Link>
+              <Link href="/register" className="btn btn-sm btn-primary text-white">Register</Link>
             </div>
           )}
         </div>

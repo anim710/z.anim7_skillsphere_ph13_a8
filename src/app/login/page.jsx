@@ -37,13 +37,21 @@ function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-300 via-white to-blue-200 flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
 
         <div className="flex flex-col items-center mb-8">
-          <div className="bg-purple-100 p-3 rounded-2xl mb-3">
-            <FontAwesomeIcon icon={faBookOpen} className="w-8 h-8 text-purple-600" />
-          </div>
+          
+            
+           {/* Logo */}
+           <Link href="/" >
+            <img
+              src="/skillspheree.png"
+              alt="SkillSphere Logo"
+              className="h-10 w-auto object-contain"
+            />
+            
+          </Link>
           <h1 className="text-2xl font-bold text-gray-800">Welcome Back</h1>
           <p className="text-gray-500 text-sm mt-1">Login to your SkillSphere account</p>
         </div>

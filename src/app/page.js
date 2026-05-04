@@ -210,22 +210,22 @@ export default function Home() {
       </Swiper>
 
       {/* Stats Bar */}
-      <div className="bg-purple-700 text-white py-6">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          {[
-            { icon: faUsers, value: "50K+", label: "Students" },
-            { icon: faGraduationCap, value: "100+", label: "Courses" },
-            { icon: faTrophy, value: "30+", label: "Instructors" },
-            { icon: faStar, value: "4.8★", label: "Avg Rating" },
-          ].map((s, i) => (
-            <div key={i}>
-              <FontAwesomeIcon icon={s.icon} className="w-5 h-5 mb-1 text-purple-300" />
-              <div className="text-2xl font-bold">{s.value}</div>
-              <div className="text-purple-200 text-sm">{s.label}</div>
+                <div className="text-white py-6" style={{ backgroundColor: "#003366" }}>
+            <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              {[
+                { icon: faUsers, value: "50K+", label: "Students" },
+                { icon: faGraduationCap, value: "100+", label: "Courses" },
+                { icon: faTrophy, value: "30+", label: "Instructors" },
+                { icon: faStar, value: "4.8★", label: "Avg Rating" },
+              ].map((s, i) => (
+                <div key={i}>
+                  <FontAwesomeIcon icon={s.icon} className="w-5 h-5 mb-1" style={{ color: "#A3C1DA" }} />
+                  <div className="text-2xl font-bold">{s.value}</div>
+                  <div className="text-sm" style={{ color: "#A3C1DA" }}>{s.label}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
       {/* Popular Courses */}
       <section className="max-w-6xl mx-auto px-4 py-16">
@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* Trending Courses */}
-      <section className="bg-purple-50 py-16">
+      <section className="py-16" style={{ backgroundColor: "#A3C1DA" + "33" }}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
             <div>
@@ -284,7 +284,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className="font-bold text-gray-800 text-sm">{inst.name}</h3>
-              <p className="text-xs text-purple-600 font-medium">{inst.role}</p>
+              <p className="text-xs text-dark-blue font-medium">{inst.role}</p>
               <p className="text-xs text-gray-400 mt-1">{inst.students} students</p>
             </div>
           ))}
@@ -292,7 +292,7 @@ export default function Home() {
       </section>
 
       {/* Learning Tips */}
-      <section className="bg-gray-50 py-16">
+      <section className="py-16" style={{ backgroundColor: "#f0f6fb" }}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-800">💡 Learning Tips</h2>
@@ -301,8 +301,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {tips.map((tip, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 border border-gray-100">
-                <div className="bg-purple-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                  <FontAwesomeIcon icon={tip.icon} className="w-5 h-5 text-purple-600" />
+                <div className="bg-dark-blue w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <FontAwesomeIcon icon={tip.icon} className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-800 mb-2">{tip.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{tip.desc}</p>
@@ -327,7 +327,7 @@ export default function Home() {
           </video>
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-purple-900/70 z-10"></div>
+          <div className="absolute inset-0 z-10" style={{ backgroundColor: "#003366CC" }}></div>
 
           {/* Content */}
           <div className="relative z-20 max-w-3xl mx-auto px-4 text-center">
@@ -343,13 +343,13 @@ export default function Home() {
             <div className="flex gap-4 justify-center flex-wrap">
               <Link
                 href="/register"
-                className="btn bg-white text-purple-700 font-bold border-0 hover:bg-gray-100 px-8 btn-lg"
+                className="btn bg-white text-dark-blue font-bold border-0 hover:bg-gray-100 px-8 btn-lg"
               >
                 Get Started Free
               </Link>
               <Link
                 href="/courses"
-                className="btn btn-outline border-white text-white hover:bg-white hover:text-purple-700 px-8 btn-lg"
+                className="btn btn-outline border-white text-white hover:bg-dark-blue cta-btn-browse px-8 btn-lg"
               >
                 Browse Courses
               </Link>

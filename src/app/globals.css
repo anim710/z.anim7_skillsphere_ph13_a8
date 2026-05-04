@@ -4,3 +4,35 @@
 @plugin "daisyui" {
   themes: light --default;
 }
+
+
+:root {
+  --navy-dark: #1B2B49;
+  --sky-blue: #A3C1DA;
+  --bright-blue: #0095D9;
+  --ocean-blue: #007BB8;
+  --deep-navy: #003366;
+  --dark-blue: #003B5C;
+}
+
+.text-dark-blue {
+  color: var(--dark-blue);
+}
+
+.bg-dark-blue {
+  background-color: var(--dark-blue);
+}
+
+.bg-bright-blue {
+  background-color: var(--bright-blue);
+}
+
+.cta-btn-browse{
+  background-color: var(--dark-blue)
+  color white
+}
+
+.cta-btn-browse:hover {
+  background-color: white;
+  color: var(--dark-blue);
+}

@@ -10,15 +10,20 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer style={{ backgroundColor: "#1B2B49" }} className="text-gray-300">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
 
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-2 text-white font-bold text-lg mb-3">
-            <FontAwesomeIcon icon={faBookOpen} className="w-5 h-5" />
-            SkillSphere
-          </div>
+          {/* Logo */}
+           <Link href="/" className="flex items-center gap-2">
+            <img
+              src="/skillspheree.png"
+              alt="SkillSphere Logo"
+              className="h-10 w-auto object-contain"
+            />
+            <span style={{ fontWeight: "bold" , fontSize: "1rem" }}>SkillSphere</span> 
+          </Link>
           <p className="text-sm text-gray-400 leading-relaxed">
             Upgrade your skills with expert-led courses. Learn at your own pace, anytime, anywhere.
           </p>
@@ -40,15 +45,15 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faEnvelope} className="w-3.5 h-3.5 text-purple-400" />
+              <FontAwesomeIcon icon={faEnvelope} className="w-3.5 h-3.5 text-{##0095D9}" />
               support@skillsphere.com
             </li>
             <li className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faPhone} className="w-3.5 h-3.5 text-purple-400" />
+              <FontAwesomeIcon icon={faPhone} className="w-3.5 h-3.5 text-{##0095D9}" />
               +880 1234 56789
             </li>
             <li className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-purple-400" />
+              <FontAwesomeIcon icon={faLocationDot} className="w-3.5 h-3.5 text-{##0095D9}" />
               Dhaka City, Bangladesh
             </li>
           </ul>
@@ -59,11 +64,11 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Legal</h4>
           <ul className="space-y-2 text-sm mb-6">
             <li className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faFileContract} className="w-3 h-3 text-purple-400" />
-              <a href="#" className="hover:text-purple-400 transition-colors">Terms & Conditions</a>
+              <FontAwesomeIcon icon={faFileContract} className="w-3 h-3 text-{##0095D9}" />
+              <a href="#" className="hover:text-{##0095D9} transition-colors">Terms & Conditions</a>
             </li>
             <li className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faShield} className="w-3 h-3 text-purple-400" />
+              <FontAwesomeIcon icon={faShield} className="w-3 h-3 text-{##0095D9}" />
               <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
             </li>
           </ul>
