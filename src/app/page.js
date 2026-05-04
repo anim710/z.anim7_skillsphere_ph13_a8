@@ -231,7 +231,13 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 py-16">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">🔥 Popular Courses</h2>
+            <h2 className="text-3xl font-bold text-gray-800">
+              <img 
+                src="/icons8-fire-48.gif"
+                alt="Popular"
+                className="w-10 h-10"
+              />
+              Popular Courses</h2>
             <p className="text-gray-500 mt-1">Top-rated picks by our learners</p>
           </div>
           <Link href="/courses" className="btn btn-outline btn-primary btn-sm">View All</Link>
@@ -252,7 +258,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-gray-800">📈 Trending Courses</h2>
+              <h2 className="text-3xl font-bold text-gray-800">
+                <img 
+                src="/icons8-improvement-48.gif"
+                alt="trending"
+                className="w-10 h-10"
+              />
+              Trending Courses</h2>
               <p className="text-gray-500 mt-1">What students are enrolling in right now</p>
             </div>
             <Link href="/courses" className="btn btn-outline btn-primary btn-sm">View All</Link>
@@ -272,7 +284,17 @@ export default function Home() {
       {/* Top Instructors */}
       <section className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-800">🏆 Top Instructors</h2>
+                  <div className="flex flex-col items-center">
+          <img
+            src="/icons8-prize-48.gif"
+            alt="top"
+            className="w-12 h-12 mb-2"
+          />
+
+          <h2 className="text-3xl font-bold text-gray-800">
+            Top Instructors
+          </h2>
+        </div>
           <p className="text-gray-500 mt-1">Learn from the best in the industry</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -295,7 +317,19 @@ export default function Home() {
       <section className="py-16" style={{ backgroundColor: "#f0f6fb" }}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800">💡 Learning Tips</h2>
+            
+                            <div className="flex flex-col items-center">
+                  <img
+                    src="/icons8-bulb.gif"
+                    alt="top"
+                    className="w-12 h-12 mb-2"
+                  />
+
+                  <h2 className="text-3xl font-bold text-gray-800">
+                    Learning Tips
+                  </h2>
+                </div>
+              
             <p className="text-gray-500 mt-1">Study smarter, not harder</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
